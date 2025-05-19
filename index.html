@@ -1,0 +1,522 @@
+
+<!-- kbu r&d community website-->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>KBU R&D Community</title>
+      <style>
+        * { 
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+        }
+
+        html, body {
+          font-family: Arial, sans-serif;
+          background: url('background_image.jpeg') center/cover fixed no-repeat;
+          color: white;
+          scroll-behavior: smooth;
+        }
+
+        .header {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          background-color: rgba(255, 255, 255, 0.95);
+          padding: 10px 20px;
+          border-bottom: 2px solid #eee;
+          flex-wrap: wrap;
+        }
+
+        .headline img {
+          width: 90px;
+          height: 80px;
+          object-fit: cover;
+          border-radius: 50%;
+          transition: transform 0.3s ease;
+        }
+
+        .headline img:hover {
+          transform: scale(1.05);
+        }
+        .top-right {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          flex-wrap: wrap;
+        }
+
+        #languageSelector {
+          padding: 5px;
+          font-size: 14px;
+          border-radius: 4px;
+        }
+
+        nav {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          background: white;
+          padding: 10px 20px;
+          border-bottom: 3px solid pink;
+          position: sticky;
+          top: 0;
+          z-index: 999;
+          flex-wrap: wrap;
+        }
+
+        .nav-links {
+          display: flex;
+          justify-content: center;
+          flex: 1;
+          gap: 20px;
+        }
+
+        nav a {
+          text-decoration: none;
+          font-weight: bold;
+          color: #3f92a9;
+        }
+
+        .faq-button {
+          background-color: #3f92a9;
+          color: white !important;
+          padding: 6px 12px;
+          border-radius: 5px;
+          font-size: 14px;
+          transition: background 0.3s ease;
+        }
+
+        .faq-button:hover {
+          background-color: #337f94;
+        }
+
+        section {
+          padding: 60px 20px;
+          background-color: rgba(0, 0, 0, 0.4);
+        }
+
+        .section-title {
+          text-align: center;
+          margin-bottom: 20px;
+          font-size: 28px;
+          color: #f8eab4;
+        }
+
+        .card {
+          background: rgba(255, 255, 255, 0.85);
+          color: black;
+          padding: 20px;
+          margin: 20px auto;
+          max-width: 800px;
+          border-left: 5px solid #ad7da8;
+          box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        .team-cards {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          gap: 20px;
+        }
+
+        .team-member {
+          background: white;
+          color: black;
+          padding: 15px;
+          border-radius: 8px;
+          box-shadow: 0 0 8px rgba(0,0,0,0.1);
+          width: 220px;
+          text-align: center;
+        }
+
+        .team-member a {
+          display: block;
+          margin-top: 10px;
+          color: #0077cc;
+        }
+
+        footer {
+          background:rgb(175, 178, 178);
+          text-align: center;
+          padding: 20px;
+          font-size: 14px;
+        }
+
+        .social_links img {
+          width: 24px;
+          height: 24px;
+          transition: transform 0.3s ease;
+        }
+
+        .social_links img:hover {
+          transform: scale(1.1);
+        }
+
+        .action-buttons {
+          text-align: center;
+          margin-top: 30px;
+        }
+
+        .action-buttons a {
+          display: inline-block;
+          margin: 10px;
+          padding: 12px 24px;
+          background-color: #b7bfc4;
+          color: white;
+          font-weight: bold;
+          border: none;
+          border-radius: 6px;
+          text-decoration: none;
+          transition: background 0.3s ease;
+        }
+
+        .action-buttons a:hover {
+          background-color: #007acc;
+        }
+
+        @media (max-width: 768px) {
+
+          nav {
+            flex-direction: column;
+            align-items: center;
+          }
+
+          .nav-links {
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 10px;
+          }
+
+          .faq-button {
+            margin-top: 10px;
+          }
+
+          .header, .top-right {
+            flex-direction: column;
+            align-items: flex-start;
+          }
+
+          .team-cards {
+            flex-direction: column;
+          }
+
+          .team-member {
+            width: 100%;
+            max-width: 300px;
+          }
+
+          .action-buttons a {
+            width: 80%;
+          }
+        }
+      </style>
+    </head>
+
+    <body>
+      <div class="header">
+        <div class="headline">
+          <img src="image_1.jpg" alt="Logo" />
+        </div>
+        <div class="top-right">
+          <div class="social_links">
+            <a href="mailto:ilhanebru724@gmail.com"><img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email" /></a>
+            <a href="tel:+905347738514"><img src="https://cdn-icons-png.flaticon.com/512/159/159832.png" alt="Phone" /></a>
+            <a href="https://linkedin.com/in/ebru-ilhan-3103b2341" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" /></a>
+            <a href="https://instagram.com/ebru_ilhn724" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/174/174855.png" alt="Instagram" /></a>
+          </div>
+          <select id="languageSelector">
+            <option value="en">English</option>
+            <option value="tr">Türkçe</option>
+            <option value="ku">Kurdî</option>
+            <option value="fr">Français</option>
+            <option value="de">Deutsch</option>
+            <option value="ru">Русский</option>
+            <option value="zh">中文</option>
+            <option value="ar">العربية</option>  
+            <option value="fa">فارسی</option>
+          </select>
+        </div>
+      </div>
+
+      <nav>
+        <div class="nav-links">
+          <a href="#home" id="navHome">Home</a>
+          <a href="#about" id="navAbout">About</a>
+          <a href="#projects" id="navProjects">Projects</a>
+          <a href="#team" id="navTeam">Team</a>
+        </div>
+        <a href="faq.html" id="navFAQ" class="faq-button" target="_blank">FAQ</a>
+      </nav>
+
+      <section id="home">
+        <h1 class="section-title" id="titleWelcome">Welcome to Karabuk University R&D Community</h1>
+        <p style="text-align:center;" id="descWelcome">We are building the future together.</p>
+        <div class="action-buttons">
+          <a href="join_us.html" target="_blank" id="btnJoin">Join Us</a>
+          <a href="sent _To_Project.html" target="_blank" id="btnSend">Send Your Project</a>
+        </div>
+      </section>
+
+      <section id="about">
+        <h2 class="section-title" id="aboutTitle">About Us</h2>
+        <div class="card">
+          <h3 id="whoWeAre">Who We Are</h3>
+          <p id="whoWeAreText">We are a student-led community focused on innovation, collaboration, and hands-on research projects at Karabuk University.</p>
+        </div>
+        <div class="card">
+          <h3 id="mission">Our Mission</h3>
+          <p id="missionText">To support young innovators who want to shape the future of technology.</p>
+        </div>
+        <div class="card">
+          <h3 id="vision">Our Vision</h3>
+          <p id="visionText">To become a leading research and development community that blends science and creativity.</p>
+        </div>
+      </section>
+
+      <section id="projects">
+        <h2 class="section-title" id="projectTitle">Projects</h2>
+        <div class="card">
+          <h3>Ebru Ilhan Deep Dive Dynamics</h3>
+          <p>This project focuses on developing underwater robotic systems for sea exploration, defense, and environmental monitoring.</p>
+          <h3><a href="underwater_Contral_Panel.html" target="_blank" style="color:rgb(81, 174, 245);">Underwater Control Panel</a></h3>
+          <p>This project focuses on submarine defense systems.</p>
+        </div>
+      </section>
+
+      <section id="team">
+        <h2 class="section-title" id="teamTitle">Our Team</h2>
+        <div class="team-cards">
+          <div class="team-member">
+            <h3>Founder & Lead</h3>
+            <p>Muhammed Köse</p>
+          </div>
+        <div class="team-member">
+          <h3>Software Developer</h3>
+          <p>Kerem Keskinoğlu</p>
+        </div>
+        <div class="team-member">
+          <img src="resmim.jpeg" alt="Ebru Ilhan" width="180" style="border-radius: 50%; border:2px solid white;">
+          <h3>Website Designer</h3>
+          <p>Ebru Ilhan</p>
+          <a href="cv.html" target="_blank" style="color:rgb(81, 174, 245);">My CV</a>
+        </div>
+     
+      </section>
+
+      <footer>
+        © 2025 Ebru Ilhan. All rights reserved.
+      </footer>
+
+      <script>
+        const translations = {
+          en: {
+            navHome: "Home",
+            navAbout: "About",
+            navProjects: "Projects",
+            navTeam: "Team",
+            navFAQ: "FAQ",
+            titleWelcome: "Welcome to Karabuk University R&D Community",
+            descWelcome: "We are building the future together.",
+            btnJoin: "Join Us",
+            btnSend: "Send Your Project",
+            aboutTitle: "About Us",
+            whoWeAre: "Who We Are",
+            whoWeAreText: "We are a student-led community focused on innovation, collaboration, and hands-on research projects at Karabuk University.",
+            mission: "Our Mission",
+            missionText: "To support young innovators who want to shape the future of technology.",
+            vision: "Our Vision",
+            visionText: "To become a leading research and development community that blends science and creativity.",
+            projectTitle: "Projects",
+            teamTitle: "Our Team"
+          },
+          tr: {
+            navHome: "Anasayfa",
+            navAbout: "Hakkımızda",
+            navProjects: "Projeler",
+            navTeam: "Ekip",
+            navFAQ: "SSS",
+            titleWelcome: "Karabük Üniversitesi Ar-Ge Topluluğuna Hoş Geldiniz",
+            descWelcome: "Geleceği birlikte inşa ediyoruz.",
+            btnJoin: "Bize Katılın",
+            btnSend: "Projenizi Gönderin",
+            aboutTitle: "Hakkımızda",
+            whoWeAre: "Biz Kimiz",
+            whoWeAreText: "Karabük Üniversitesi'nde inovasyon, iş birliği ve uygulamalı araştırma projelerine odaklanan öğrenci topluluğuyuz.",
+            mission: "Misyonumuz",
+            missionText: "Teknolojinin geleceğini şekillendirmek isteyen genç yenilikçilere destek olmak.",
+            vision: "Vizyonumuz",
+            visionText: "Bilim ve yaratıcılığı birleştiren öncü bir araştırma-geliştirme topluluğu olmak.",
+            projectTitle: "Projeler",
+            teamTitle: "Ekibimiz"
+          },
+          ku: {
+            navHome: "Destpêk",
+            navAbout: "Derbarê me",
+            navProjects: "Proje",
+            navTeam: "Tîm",
+            navFAQ: "Pirsên Pirr Wekî",
+            titleWelcome: "Bi xêr hatî Komelgeha Lêkolîn û Pêşkeftina Dîrokê ya Zanîngeha Karabûkê",
+            descWelcome: "Em di hevre de dîrokê ava dikin.",
+            btnJoin: "Bi me re be",
+            btnSend: "Proje xwe bişîne",
+            aboutTitle: "Derbarê me",
+            whoWeAre: "Em kî ne",
+            whoWeAreText: "Em komelgehek xwendekar in ku li Zanîngeha Karabûkê di ser nûvekirinê, hevkarî û projeyên lêkolînê yên bi destan de xebitînin.",
+            mission: "Armanca me",
+            missionText: "Piştgiriya ciwanên nûvekar ku dixwazin pêşerojê ya teknolîjiyê şekil bidin.",
+            vision: "Vîzyona me",
+            visionText: "Bibe komelgehek pêşkeftî ya lêkolîn û pêşkeftinê ku zanyarî û xeyalîtiyê bi hev re têkildar dike.",
+            projectTitle: "Proje",
+            teamTitle: "Tîma me"
+          },
+          fr: {
+            navHome: "Accueil",
+            navAbout: "À propos",
+            navProjects: "Projets",
+            navTeam: "Équipe",
+            navFAQ: "FAQ",
+            titleWelcome: "Bienvenue à la communauté R&D de l'Université de Karabük",
+            descWelcome: "Nous construisons l'avenir ensemble.",
+            btnJoin: "Rejoignez-nous",
+            btnSend: "Envoyez votre projet",
+            aboutTitle: "À propos",
+            whoWeAre: "Qui sommes-nous",
+            whoWeAreText: "Nous sommes une communauté dirigée par des étudiants, axée sur l'innovation, la collaboration et des projets de recherche pratiques à l'Université de Karabük.",
+            mission: "Notre mission",
+            missionText: "Soutenir les jeunes innovateurs qui souhaitent façonner l'avenir de la technologie.",
+            vision: "Notre vision",
+            visionText: "Devenir une communauté de recherche et développement de premier plan qui allie science et créativité.",
+            projectTitle: "Projets",
+            teamTitle: "Notre équipe"
+          },
+          de: {
+            navHome: "Startseite",
+            navAbout: "Über uns",
+            navProjects: "Projekte",
+            navTeam: "Team",
+            navFAQ: "FAQ",
+            titleWelcome: "Willkommen in der F&E-Community der Universität Karabük",
+            descWelcome: "Wir gestalten gemeinsam die Zukunft.",
+            btnJoin: "Treten Sie uns bei",
+            btnSend: "Senden Sie Ihr Projekt",
+            aboutTitle: "Über uns",
+            whoWeAre: "Wer wir sind",
+            whoWeAreText: "Wir sind eine von Studenten geleitete Gemeinschaft, die sich an der Universität Karabük auf Innovation, Zusammenarbeit und praktische Forschungsprojekte konzentriert.",
+            mission: "Unsere Mission",
+            missionText: "Unterstützung junger Innovatoren, die die Zukunft der Technologie gestalten möchten.",
+            vision: "Unsere Vision",
+            visionText: "Eine führende Forschungs- und Entwicklungsgemeinschaft zu werden, die Wissenschaft und Kreativität vereint.",
+            projectTitle: "Projekte",
+            teamTitle: "Unser Team"
+          },
+          ru: {
+            navHome: "Главная",
+            navAbout: "О нас",
+            navProjects: "Проекты",
+            navTeam: "Команда",
+            navFAQ: "ЧаВо",
+            titleWelcome: "Добро пожаловать в научно-исследовательское сообщество Университета Карабюк",
+            descWelcome: "Мы строим будущее вместе.",
+            btnJoin: "Присоединиться к нам",
+            btnSend: "Отправить ваш проект",
+            aboutTitle: "О нас",
+            whoWeAre: "Кто мы",
+            whoWeAreText: "Мы студенческое сообщество, сосредоточенное на инновациях, сотрудничестве и практических исследовательских проектах в Университете Карабюк.",
+            mission: "Наша миссия",
+            missionText: "Поддерживать молодых новаторов, стремящихся формировать будущее технологий.",
+            vision: "Наше видение",
+            visionText: "Стать ведущим научно-исследовательским сообществом, объединяющим науку и творчество.",
+            projectTitle: "Проекты",
+            teamTitle: "Наша команда"
+          },
+          zh: {
+            navHome: "主页",
+            navAbout: "关于我们",
+            navProjects: "项目",
+            navTeam: "团队",
+            navFAQ: "常见问题",
+            titleWelcome: "欢迎来到卡拉布克大学研发社区",
+            descWelcome: "我们共同构建未来。",
+            btnJoin: "加入我们",
+            btnSend: "提交您的项目",
+            aboutTitle: "关于我们",
+            whoWeAre: "我们是谁",
+            whoWeAreText: "我们是一个由学生主导的社区，专注于卡拉布克大学的创新、合作和实践研究项目。",
+            mission: "我们的使命",
+            missionText: "支持希望塑造技术未来的年轻创新者。",
+            vision: "我们的愿景",
+            visionText: "成为一个融合科学与创造力的领先研发社区。",
+            projectTitle: "项目",
+            teamTitle: "我们的团队"
+          },
+          ar: {
+            navHome: "الرئيسية",
+            navAbout: "من نحن",
+            navProjects: "المشاريع",
+            navTeam: "الفريق",
+            navFAQ: "الأسئلة الشائعة",
+            titleWelcome: "مرحبًا بكم في مجتمع البحث والتطوير بجامعة كارابوك",
+            descWelcome: "نحن نبني المستقبل معًا.",
+            btnJoin: "انضم إلينا",
+            btnSend: "أرسل مشروعك",
+            aboutTitle: "من نحن",
+            whoWeAre: "من نكون",
+            whoWeAreText: "نحن مجتمع يقوده الطلاب يركز على الابتكار والتعاون والمشاريع البحثية العملية في جامعة كارابوك.",
+            mission: "مهمتنا",
+            missionText: "دعم المبتكرين الشباب الذين يسعون لتشكيل مستقبل التكنولوجيا.",
+            vision: "رؤيتنا",
+            visionText: "أن نصبح مجتمعًا رائدًا في البحث والتطوير يجمع بين العلم والإبداع.",
+            projectTitle: "المشاريع",
+            teamTitle: "فريقنا"
+          },
+          fa: {
+            navHome: "خانه",
+            navAbout: "درباره ما",
+            navProjects: "پروژه‌ها",
+            navTeam: "تیم",
+            navFAQ: "سؤالات متداول",
+            titleWelcome: "به جامعه تحقیق و توسعه دانشگاه کارابوک خوش آمدید",
+            descWelcome: "ما در حال ساختن آینده‌ای بهتر با هم هستیم.",
+            btnJoin: "به ما بپیوندید",
+            btnSend: "پروژه خود را ارسال کنید",
+            aboutTitle: "درباره ما",
+            whoWeAre: "ما که هستیم",
+            whoWeAreText: "ما یک جامعه دانشجویی هستیم که بر نوآوری، همکاری و پروژه‌های تحقیقاتی عملی در دانشگاه کارابوک تمرکز داریم.",
+            mission: "ماموریت ما",
+            missionText: "حمایت از نوآوران جوانی که می‌خواهند آینده فناوری را شکل دهند.",
+            vision: "چشم‌انداز ما",
+            visionText: "تبدیل شدن به یک جامعه پیشرو در تحقیق و توسعه که علم و خلاقیت را ترکیب می‌کند.",
+            projectTitle: "پروژه‌ها",
+            teamTitle: "تیم ما"
+          }
+        };
+        
+        document.getElementById('languageSelector').addEventListener('change', function () {
+          const lang = this.value;
+          if (!translations[lang]) return;
+          const t = translations[lang];
+          for (const key in t) {
+            const el = document.getElementById(key);
+            if (el) el.innerHTML = t[key];
+          }
+        document.documentElement.lang = lang;
+
+    // Sağdan sola diller için yön değiştir
+          if (lang === 'ar' || lang === 'fa') {
+            document.body.style.direction = 'rtl';
+          } else {
+            document.body.style.direction = 'ltr';
+          }
+        });
+      </script>
+
+    </body>
+</html>
+
+
+
+
+
